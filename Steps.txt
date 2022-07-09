@@ -3,5 +3,10 @@ Initiating Projects
 
 Back-end:
 
-- Using Intellij Ultimate - Spring Initialzr - Choose Spring Web | and Spring Starter
+- Using Intellij Ultimate - Spring Initialzr - Choose Spring Web | and Spring Native
+
+
+Front-end-ui:
+
+- Using Intellij Ultimate - Spring Initialzr - Choose Spring Native | and Templates:THYMELEAF
 
