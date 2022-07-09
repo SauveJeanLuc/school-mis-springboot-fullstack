@@ -1,0 +1,40 @@
+==========================
+        SCHOOL MIS
+==========================
+
+TECHNOLOGIES:
+-------------
+
+BACK-END RESTFUL APIS: SPRING-BOOT - JPA - POSTGRESQL
+FRONT-END UI: SPRING-BOOT - THYMELEAF
+FRONT-END CLI: SPRING-BOOT 
+
+
+USERS:
+
+- Admin 
+- Teacher 
+- Student 
+
+Functional Requirements:
+
+ADMIN
+-----
+
+* Admin can sign-up using post-man
+* Admin can Log In
+* Admin can register courses
+* Assign courses to Teachers
+
+TEACHER
+-------
+
+* Teacher can sign-up and sign-in via UI
+* Teacher can register existing students to courses
+* Teacher can give marks to student in his courses
+
+STUDENT
+--------
+
+* Student can sign-up and sign-in via UI
+* Student can view his marks in all courses
