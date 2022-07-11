@@ -29,6 +29,5 @@ public class SignUpDTO {
 
     private ERole role;
 
-    @ValidPassword
     private  String password;
 }

@@ -86,11 +86,17 @@ public class UserController {
     @PostMapping(path = "/register")
     public ResponseEntity<ApiResponse> register(@RequestBody @Valid SignUpDTO dto){
 
+        System.out.println("Going to Sign Up");
+
         User user = new User();
+
+        System.out.println("Reached Here 1");
 
         String encodedPassword = bCryptPasswordEncoder.encode(dto.getPassword());
         Role role = roleRepository.findByName(dto.getRole()).orElseThrow(
                 ()-> new BadRequestException("User Role not set"));
+
+        System.out.println("Reached Here 2");
 
         user.setEmail(dto.getEmail());
         user.setFirstName(dto.getFirstName());
@@ -100,7 +106,12 @@ public class UserController {
         user.setPassword(encodedPassword);
         user.setRoles(Collections.singleton(role));
 
+        System.out.println("Reached Here 3");
+
         User entity = this.userService.create(user);
+
+        System.out.println("Retrieved user: ");
+        System.out.println(entity);
 
         return ResponseEntity.ok(new ApiResponse(true, entity));
     }

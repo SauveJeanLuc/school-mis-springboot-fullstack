@@ -1,6 +1,7 @@
 package com.java.main.springstarter.v1.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.java.main.springstarter.v1.audits.InitiatorAudit;
 import com.java.main.springstarter.v1.audits.TimestampAudit;
 import com.java.main.springstarter.v1.enums.EGender;
 import com.java.main.springstarter.v1.enums.EUserStatus;
@@ -30,7 +31,6 @@ public class User extends TimestampAudit {
     @Column(name="id")
     private UUID id;
 
-
     @NotBlank
     @Column(name="email")
     private String email;
@@ -44,13 +44,16 @@ public class User extends TimestampAudit {
     @Column(name="mobile")
     private String mobile;
 
+    @Column(name="national_id")
+    private String nationalId;
+
     @JsonIgnore
     @NotBlank
     @Column(name="password")
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="gendder")
+    @Column(name="gender")
     private EGender gender;
 
     @Enumerated(EnumType.STRING)
@@ -62,11 +65,8 @@ public class User extends TimestampAudit {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private File profileImage;
 
-
     @Column(name="activation_code")
     private String activationCode;
-
-
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))

@@ -83,7 +83,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                         "/webjars/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/spring-starter/**").permitAll()
                 .anyRequest()
-                .authenticated();
+                .permitAll();
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }

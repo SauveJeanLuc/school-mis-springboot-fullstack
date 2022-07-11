@@ -25,11 +25,8 @@ public class Role {
     @Column(name="name")
     private ERole name;
 
-    @Column(name="description")
-    private String description;
 
     public Role(ERole name, String description) {
         this.name = name;
-        this.description = description;
     }
 }
